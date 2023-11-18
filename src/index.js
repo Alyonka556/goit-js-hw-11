@@ -1,4 +1,3 @@
-
 import {getPhotos} from './js/pixabay-api';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
@@ -80,69 +79,3 @@ loadMoreBtn.addEventListener('click', async () => {
 
 
 });
-
-
-
-
-
-// const pixabayApi = new PixabayApi(40);
-// pixabayApi.fetchGallery().then(console.log);
-
-
-// const onSearchFormElSubmit = event => {
-//   event.preventDefault();
-
-//   const { target: searchForm } = event;
-
-//   pixabayApi.query = searchForm.elements.hitsEl;
-//   pixabayApi.page = 1;
-
-//   pixabayApi
-//     .fetchGallery()
-//     .then(({ data }) => {
-//       console.log(data);
-
-//       if (data.total === 0) {
-//         galleryContainer.innerHTML = '';
-
-//         loadMoreBtn.classList.add('is-hidden');
-
-//         searchForm.reset();
-
-//         return;
-//       }
-
-//       if (data.total_pages === 1) {
-//         galleryContainer.innerHTML = renderMarkup(data.results);
-//         loadMoreBtn.classList.add('is-hidden');
-
-//         return;
-//       }
-
-//       galleryContainer.innerHTML = renderMarkup(data.results);
-//       loadMoreBtn.classList.remove('is-hidden');
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// };
-
-// const onLoadMoreBtnElClick = event => {
-//   pixabayApi.page += 1;
-
-//   pixabayApi
-//     .fetchGallery()
-//     .then(({ data }) => {
-//       galleryContainer.insertAdjacentHTML('beforeend', createGalleryCardsTemplate(data.results));
-
-//       if (data.total_pages === pixabayApi.page) {
-//         loadMoreBtn.classList.add('is-hidden');
-//       }
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// };
-
-// searchForm.addEventListener('submit', onSearchFormElSubmit);
-// loadMoreBtn.addEventListener('click', onLoadMoreBtnElClick);
