@@ -9,7 +9,6 @@ import {onRenderGallery} from './js/markup';
 let arrPhotos = [];
 let totalPhoto = 0;
 let page = 1;
-
 getPhotos();
 
 async function getData(userInput, page) {
@@ -38,7 +37,7 @@ searchForm.addEventListener('submit', async (event) => {
   galleryContainer.innerHTML = '';
   page= 1;
 
-  userInput = input.value;
+  userInput = input.value.trim();
   await getData(userInput, page);
 
   if (arrPhotos.length === 0) {
@@ -46,6 +45,7 @@ searchForm.addEventListener('submit', async (event) => {
       'Sorry, there are no images matching your search query. Please try again.'
   )
   loadMoreBtn.classList.add('is-hidden')
+
 }else {
     Notiflix.Notify.success(`Yes! We found ${totalPhoto} images.`);  
   
@@ -73,4 +73,5 @@ loadMoreBtn.addEventListener('click', async () => {
     );
     loadMoreBtn.classList.add('is-hidden');
   }
+
 });

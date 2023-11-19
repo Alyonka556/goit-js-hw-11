@@ -75,7 +75,7 @@ form {
 .button:hover,
 .button:focus {
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: var(--main-bg);
+  background-color: #e3e4ef;
   stroke-width: 1px;
 }
 
@@ -151,6 +151,6 @@ margin: 0 auto;
 .btn-load-more:hover,
 .btn-load-more:focus {
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: var(--main-bg);
+  background-color: #e3e4ef;
   stroke-width: 1px;
 }
