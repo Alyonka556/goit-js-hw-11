@@ -5,10 +5,11 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import { searchForm, galleryContainer, input, loadMoreBtn } from "./js/refs";
 import {onRenderGallery} from './js/markup';
 
-
+let userInput;
 let arrPhotos = [];
 let totalPhoto = 0;
 let page = 1;
+// let perPage = 40;
 getPhotos();
 
 async function getData(userInput, page) {
@@ -36,6 +37,7 @@ searchForm.addEventListener('submit', async (event) => {
 
   galleryContainer.innerHTML = '';
   page= 1;
+  // perPage = 40;
 
   userInput = input.value.trim();
   await getData(userInput, page);
@@ -73,5 +75,7 @@ loadMoreBtn.addEventListener('click', async () => {
     );
     loadMoreBtn.classList.add('is-hidden');
   }
+
+  // if(arrPhotos.length < perPage) 
 
 });
