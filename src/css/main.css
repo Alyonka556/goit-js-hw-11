@@ -48,7 +48,6 @@ form {
 
 .serch-input:hover,
 .serch-input:focus {
-  border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: #e3e4ef;
   stroke-width: 1px;
 }
@@ -74,7 +73,6 @@ form {
 
 .button:hover,
 .button:focus {
-  border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: #e3e4ef;
   stroke-width: 1px;
 }
@@ -84,6 +82,7 @@ img{
   width: 300px;
   height: 300px;
   max-width: 100%;
+  object-fit: cover;
 
 }
 
@@ -91,6 +90,16 @@ img{
   margin: 0;
 }
 
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 4 - 40px);
+  height: 300px;
+  margin: 10px auto;;
+  overflow: hidden;
+  text-decoration: none;
+ 
+}
 
   
 

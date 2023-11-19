@@ -9,12 +9,12 @@ let userInput;
 let arrPhotos = [];
 let totalPhoto = 0;
 let page = 1;
-// let perPage = 40;
+let perPage = 40;
 getPhotos();
 
-async function getData(userInput, page) {
+async function getData(userInput, page, perPage) {
   try {
-    const response = await getPhotos(userInput, page)
+    const response = await getPhotos(userInput, page, perPage)
     totalPhoto = response.totalHits;
     arrPhotos = response.hits;
     galleryContainer.insertAdjacentHTML('beforeend', onRenderGallery(arrPhotos))
@@ -40,7 +40,7 @@ searchForm.addEventListener('submit', async (event) => {
   // perPage = 40;
 
   userInput = input.value.trim();
-  await getData(userInput, page);
+  await getData(userInput, page, perPage);
 
   if (arrPhotos.length === 0) {
     Notiflix.Notify.failure(
@@ -48,7 +48,11 @@ searchForm.addEventListener('submit', async (event) => {
   )
   loadMoreBtn.classList.add('is-hidden')
 
-}else {
+}
+if (arrPhotos.length < perPage) {
+  Notiflix.Notify.success(`Hooray! We found ${totalPhoto} images.`);
+}
+else {
     Notiflix.Notify.success(`Yes! We found ${totalPhoto} images.`);  
   
   loadMoreBtn.classList.remove('is-hidden');
@@ -76,6 +80,11 @@ loadMoreBtn.addEventListener('click', async () => {
     loadMoreBtn.classList.add('is-hidden');
   }
 
-  // if(arrPhotos.length < perPage) 
+  if(arrPhotos.length < perPage && arrPhotos.length > 0) {
+    Notiflix.Notify.info(
+      `We're sorry, but you've reached the end of search results.`
+    )
+    loadMoreBtn.classList.add('is-hidden');
+  }
 
 });
