@@ -19,7 +19,6 @@ async function getData(userInput, page) {
     arrPhotos = response.hits;
     galleryContainer.insertAdjacentHTML('beforeend', onRenderGallery(arrPhotos))
     
-   
     const lightbox = new SimpleLightbox('.gallery a', {
           captionsData: 'alt',
           captionDelay: 250,
@@ -52,8 +51,6 @@ searchForm.addEventListener('submit', async (event) => {
   
   loadMoreBtn.classList.remove('is-hidden');
 }
-
-
 })
 
 loadMoreBtn.addEventListener('click', async () => {
@@ -76,6 +73,4 @@ loadMoreBtn.addEventListener('click', async () => {
     );
     loadMoreBtn.classList.add('is-hidden');
   }
-
-
 });
