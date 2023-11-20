@@ -27,7 +27,7 @@ async function getData(userInput, page, perPage) {
       captionDelay: 250,
     });
     
-    if(lastPage === page) {
+    if(lastPage === page && page !== 1) {
       Notiflix.Notify.info(
         `We're sorry, but you've reached the end of search results.`
       )
