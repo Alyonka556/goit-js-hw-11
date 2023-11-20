@@ -20,7 +20,7 @@ button {
 }
 
 body{
-background-color: rgb(213, 213, 234);
+background-color:#252572b8;
 }
 
 form {
@@ -71,8 +71,8 @@ form {
     
 }
 
-.button:hover,
-.button:focus {
+.button-search:hover,
+.button-search:focus {
   background-color: #e3e4ef;
   stroke-width: 1px;
 }
@@ -97,6 +97,7 @@ img{
   overflow: hidden;
   text-decoration: none;
   border: 2px solid rgb(79 20 118 / 79%);
+  background: #8d96f0;
 }
 
 .gallery-container {
@@ -162,7 +163,6 @@ font-size: 14px;
 
 .btn-load-more:hover,
 .btn-load-more:focus {
-  border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: #e3e4ef;
   stroke-width: 1px;
 }
